@@ -1,4 +1,4 @@
-"Bundule需要
+" Bundule需要
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -33,9 +33,48 @@ set nohlsearch			" 搜索字符串不要高亮显示（即敲回车以后）
 set incsearch			" 搜索输入字符串过程中高亮显示（即未敲回车）
 
 " 状态栏相关
+autocmd InsertEnter * se cul    " 用浅色高亮当前行
+set ruler				" 在编辑过程中，右下角显示光标位置的状态行
+set showcmd         " 输入的命令显示出来，看的清楚些  
+set scrolloff=3     " 光标移动到buffer的顶部和底部时保持3行距离  
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容  
 set laststatus=2		" 总是显示状态栏status line
-set ruler				" 在编辑过程中，右下角显示光表位置的状态行
-set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
+
+" 显示中文帮助
+if version >= 603
+	set helplang=cn
+	set encoding=utf-8
+endif
+
+" 自动缩进
+set autoindent
+set cindent
+
+" Tab键的宽度
+set tabstop=4
+
+" 统一缩进为4
+set softtabstop=4
+set shiftwidth=4
+
+" 不要用空格代替制表符
+set expandtab
+" 在行和段开始处使用制表符
+set smarttab
+
+"搜索逐字符高亮
+set hlsearch
+set incsearch
+
+"语言设置
+set langmenu=zh_CN.UTF-8
+set helplang=cn
+
+" 总是显示状态行
+set cmdheight=2
+
+" 带有如下符号的单词不要被换行分割
+set iskeyword+=_,$,@,%,#,-
 
 " 自定义的键映射
 
@@ -98,7 +137,7 @@ filetype plugin indent on     " required!
 map <C-n> :NERDTreeToggle<CR>
 imap <C-n> <ESC> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1 "NERDTREE显示隐藏文件 
- autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&  b:NERDTreeType == "primary") | q | endif "自动关闭
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&  b:NERDTreeType == "primary") | q | endif "自动关闭
 
 "vim auto save
 let g:auto_save = 1  " enable AutoSave on Vim startup
