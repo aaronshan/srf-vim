@@ -1,3 +1,8 @@
+"Bundule需要
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+
 " 解决乱码
 set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 set termencoding=utf-8
@@ -6,7 +11,8 @@ set encoding=utf-8
 syntax enable			" 自动语法高亮
 set background=dark		"背景深色显示 
 "colorscheme molokai	" 设定配色方案
-colorscheme solarized
+colorscheme desert
+"colorscheme solarized
 set number				" 显示行号
 set cursorline			" 突出显示当前行
 set tabstop=4			" 设定 tab 长度为 4
@@ -44,6 +50,56 @@ inoremap <c-v> <esc>"+p<CR>i
 map <F2> <c-e>   " 使用F2上翻页
 map <F3> <c-y>   " 使用F3下翻页
 
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'Townk/vim-autoclose'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scripts/vim-auto-save'
+Bundle 'flazz/vim-colorschemes'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tmhedberg/matchit'
+Bundle 'vim-scripts/fcitx.vim'
+Bundle 'slim-template/vim-slim'
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+" ...
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+
+" NERDTree 插件配置
+
 "列出当前目录文件
 map <C-n> :NERDTreeToggle<CR>
 imap <C-n> <ESC> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1 "NERDTREE显示隐藏文件 
+ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&  b:NERDTreeType == "primary") | q | endif "自动关闭
+
+"vim auto save
+let g:auto_save = 1  " enable AutoSave on Vim startup
+
