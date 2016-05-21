@@ -3,9 +3,9 @@ echo "即将开始安装，请耐心等待安装完成..."
 
 # 如果是linux系统
 if which apt-get >/dev/null; then
-	sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev git
+	sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev git 
 elif which yum >/dev/null; then
-	sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel	
+	sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel 
 fi
 
 # 如果是macos系统
@@ -17,6 +17,11 @@ fi
 sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
 mv -f ~/vim ~/vim_old
 cd ~/ && git clone https://github.com/aaronshan/srf-vim.git vim
+
+git clone https://github.com/powerline/fonts.git fonts
+fonts/install.sh
+sudo rm -r fonts
+
 mv -f ~/.vim ~/.vim_old
 mv -f ~/vim ~/.vim
 mv -f ~/.vimrc ~/.vimrc_old

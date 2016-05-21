@@ -39,6 +39,7 @@ set showcmd         " 输入的命令显示出来，看的清楚些
 set scrolloff=3     " 光标移动到buffer的顶部和底部时保持3行距离  
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}   "状态行显示的内容  
 set laststatus=2		" 总是显示状态栏status line
+let g:Powerline_symbols = 'fancy' " 显示有图标的标题栏
 
 " 显示中文帮助
 if version >= 603
@@ -108,7 +109,9 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'Townk/vim-autoclose'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'vim-scripts/vim-auto-save'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'scrooloose/nerdcommenter'
