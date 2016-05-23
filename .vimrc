@@ -9,7 +9,7 @@ set termencoding=utf-8
 set encoding=utf-8
 
 syntax enable			" 自动语法高亮
-set background=dark		"背景深色显示 
+set background=dark		" 背景深色显示 
 "colorscheme molokai	" 设定配色方案
 colorscheme desert
 "colorscheme solarized
@@ -19,6 +19,7 @@ set tabstop=4			" 设定 tab 长度为 4
 set paste				" 设置粘贴模式,确保黏贴代码格式正确 
 set linebreak			" 整词换行
 set confirm				" 在处理未保存或只读文件时，弹出确认提示 
+set backspace=2         " 把delete键配置成增强模式，解决delete无法正常工作的问题
 
 " 编辑相关
 map b wbi{<Esc>ea}<Esc>					" 利用前导键加b，则可以在一个单子两边加上大括号
