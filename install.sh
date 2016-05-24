@@ -11,7 +11,8 @@ fi
 # 如果是macos系统
 if which brew >/dev/null;then
     echo "You are using HomeBrew tool"
-    brew install vim ctags git astyle
+    brew install vim ctags git astyle python
+    pip install powerline-status
 fi
 
 sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
