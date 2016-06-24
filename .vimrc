@@ -16,7 +16,6 @@ colorscheme desert
 set number				" 显示行号
 set cursorline			" 突出显示当前行
 set tabstop=4			" 设定 tab 长度为 4
-set paste				" 设置粘贴模式,确保黏贴代码格式正确 
 set linebreak			" 整词换行
 set confirm				" 在处理未保存或只读文件时，弹出确认提示 
 set backspace=2         " 把delete键配置成增强模式，解决delete无法正常工作的问题
@@ -90,6 +89,8 @@ inoremap <c-v> <esc>"+p<CR>i
 map <F2> <c-e>   " 使用F2上翻页
 map <F3> <c-y>   " 使用F3下翻页
 
+" 映射粘贴模式
+:set pastetoggle=<C-H>
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
